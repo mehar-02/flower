@@ -12,9 +12,11 @@ function CardList({plants}) {
     return (
        <div className="home">
         <div className="card-container">
+            <div className="card-wrapper">
             {plants.map((plant) => 
                <Card key={plant.plant_id} name={plant.plant_name} img={plant.img} />
             )}
+            </div>
         </div>
         </div>
     );

@@ -56,7 +56,7 @@ function Main() {
             <CardList2 plants={plants} onPage={fetchPlants2} /> */}
         </div>
         <div className="nav">
-            <Navigation onNum={handlePage} />  
+            <Navigation onNum={handlePage} currentPage={page} />  
         </div>
         </>
     );
