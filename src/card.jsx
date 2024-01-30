@@ -20,7 +20,7 @@ function Card(props) {
                     </a>
                 </h4>
                 <div className="specs">
-                    <small>Brown</small>
+                    <small>{props.color}</small>
                     <h3 className="prod-price">$50</h3>
                 </div>
             </div>
