@@ -3,7 +3,7 @@
     
 } */
 .page-num {
-    width: 40px;
+    width: auto;
     height: 40px;
     display: flex;
     align-items: center;

@@ -15,11 +15,11 @@ function Navigation({onNum, currentPage }) {
     };
     return (
         <div className="navigation-pages">
-            <Box num="Prev" onbox={handlePrevClick} />
+            {currentPage!==1 && <Box num="Prev" onbox={handlePrevClick} />}
             <Box num="1" onbox={() => handleBoxClick(1)} />
             <Box num="2" onbox={() => handleBoxClick(2)} />
             <Box num="3" onbox={() => handleBoxClick(3)} />
-            <Box num="Next" onbox={handleNextClick} />
+            {currentPage!==3 && <Box num="Next" onbox={handleNextClick} />}
         </div>
     );
 }
