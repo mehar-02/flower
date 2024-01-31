@@ -14,13 +14,16 @@ function Card(props) {
     const handleColorButtonClick = (index) => {
         setInd(index);
     }
+    const handleAddToCart = () => {
+        props.onAddToCart();
+    }
     return(
     <div className="card">
         <div className="img-container">
             <a href="#">
                 <img src= {colorUrls[ind]} sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 30vw" /*width="2000" height="2000.0"*/ alt="cap" />
             </a>
-            <div className="cart-icon">
+            <div className="cart-icon" onClick={handleAddToCart}>
                 {/* <FontAwesomeIcon icon={faCartPlus} size="2x" /> */}
                 <FontAwesomeIcon icon={faShoppingBag} size="2x" />
             </div>
@@ -41,7 +44,7 @@ function Card(props) {
                     <div className="color-circle">
                         {colorImages.map((colorImg, index) => (
                             // <a key={index} href="#" target="_blank" rel="noopener noreferrer">
-                                <button className="btn circle" style = {{backgroundColor: colorImg}} onClick = {() => handleColorButtonClick(index)}  ></button>
+                                <button className= {`btn circle ${ind === index ? 'selected' : ''}`} style = {{backgroundColor: colorImg}} onClick = {() => handleColorButtonClick(index)}  ></button>
                             /* </a> */
                         ))}
                         {/* <a href="/">

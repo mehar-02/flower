@@ -4,6 +4,7 @@ import CardList from "./cardList.jsx";
 // import CardList1 from "./list1.jsx";
 // import CardList2 from "./list2.jsx";
 import Navigation from "./navigation.jsx";
+import NavBar from "./navbar.jsx";
 
 
 function Main() {
@@ -12,6 +13,11 @@ function Main() {
     // const [plants2, setPlants2] = useState([]);
 
     const [plants, setPlants] = useState([]);
+    const [cartCount, setCartCount] = useState(0);
+
+    const addToCart = () => {
+        setCartCount(prevCount => prevCount +1);
+    }
 
     useEffect(() => {
         fetchPlants(page);
@@ -47,7 +53,8 @@ function Main() {
     return (
         <>
         <div className="main-page">
-            <CardList plants={plants} />
+            <NavBar cartCount={cartCount} />
+            <CardList plants={plants} onAddToCart={addToCart} />
             {/* {page === 1 && <CardList plants={plants} />}
             {page === 2 && <CardList plants={plants} />}
             {page === 3 && <CardList plants={plants} />} */}
