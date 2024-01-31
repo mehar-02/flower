@@ -9,4 +9,6 @@
 
 .navigation-pages button {
     margin: 0 5px; /* Optional: adjust button margins */
+    border-radius: 7%;
+    font-family: GT-America-bold;
 }

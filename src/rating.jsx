@@ -12,13 +12,13 @@ function generateStars(rating) {
 
     const starsArray = [];
     for (let i = 0; i < fullStars; i++) {
-        starsArray.push(<span key={i}><FontAwesomeIcon icon={solidStar} /></span>); // Full star
+        starsArray.push(<span key={i}><FontAwesomeIcon icon={solidStar} size="xs" /></span>); // Full star
     }
     if (halfStar) {
-        starsArray.push(<span key="halfStar"><FontAwesomeIcon icon={faStarHalfAlt} /></span>); // Half star
+        starsArray.push(<span key="halfStar"><FontAwesomeIcon icon={faStarHalfAlt} size="xs" /></span>); // Half star
     }
     for (let i = 0; i < emptyStars; i++) {
-        starsArray.push(<span key={i + fullStars + halfStar}><FontAwesomeIcon icon={regularStar} /></span>); // Empty star
+        starsArray.push(<span key={i + fullStars + halfStar}><FontAwesomeIcon icon={regularStar} size="xs" /></span>); // Empty star
     }
     return starsArray;
 }
