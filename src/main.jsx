@@ -14,11 +14,15 @@ function Main() {
 
     const [plants, setPlants] = useState([]);
     const [cartCount, setCartCount] = useState(0);
+    const [heartCount, setHeartCount] = useState(0);
 
     const addToCart = () => {
         setCartCount(prevCount => prevCount +1);
     }
-
+    
+    const addToHeart = () => {
+        setHeartCount(prev => prev +1);
+    }
     useEffect(() => {
         fetchPlants(page);
     }, [page]);
@@ -53,8 +57,8 @@ function Main() {
     return (
         <>
         <div className="main-page">
-            <NavBar cartCount={cartCount} />
-            <CardList plants={plants} onAddToCart={addToCart} />
+            <NavBar cartCount={cartCount} heartCount={heartCount} />
+            <CardList plants={plants} onAddToCart={addToCart} onHeart={addToHeart} />
             {/* {page === 1 && <CardList plants={plants} />}
             {page === 2 && <CardList plants={plants} />}
             {page === 3 && <CardList plants={plants} />} */}
